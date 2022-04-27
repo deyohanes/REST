@@ -1,6 +1,7 @@
 const { Console } = require('console')
 const mongoose = require('mongoose')
 
+
 const connectDB = async () =>{
     try {
         const conn = await mongoose.connect('mongodb+srv://JOBS:jobs@agro.kk569.mongodb.net/ECX?retryWrites=true&w=majority')

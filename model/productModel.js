@@ -2,15 +2,24 @@ const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
   productName: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
     required: true,
+    ref : 'commodities'
   },
   productSymbol: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref : 'commodities'
   },
   productId: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
     required: true,
+    ref : 'commodities'
+  },
+  producerId: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref : 'user'
   },
   producedDate: {
     type: String,
@@ -19,8 +28,8 @@ const productSchema = new mongoose.Schema({
   rating: {
     type: String,
   },
-  typeOfProduct: {
-    type: String,
+  productAvailability: {
+    type: [String],
   },
 },{
     timeseries: true,
