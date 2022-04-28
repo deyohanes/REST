@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+const validator = require("validator");
 const commoditySchema = mongoose.Schema({
   commoditieName: {
     type :String,

@@ -14,7 +14,7 @@ const warehouseSchema = new mongoose.Schema({
     required: true,
   },
   size: {
-    type: double,
+    type: Number,
     required: true,
   },
 });
