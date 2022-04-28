@@ -1,11 +1,21 @@
 const mongoose = require("mongoose");
 
 const commoditySchema = mongoose.Schema({
-  commoditieName: String,
-  symbol: [String],
-  grade: [String],
+  commoditieName: {
+    type :String,
+    required: true,
+  },
+  symbol:{
+    type :[String],
+    required: true,
+  } ,
+  grade: {
+    type :[String],
+    required : true
+  },
   market: {
     type: [String],
+    required : true,
     defaut: ["Local", "Export"],
   }
 },{
