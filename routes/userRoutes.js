@@ -4,10 +4,11 @@ const router = express.Router();
 
 const {
     getUser,
-  setUser,
   updateUser,
   deleteUser,
   getUserById,
+  register,
+  login
 } = require("../controllers/userController");
 
 //router.route('/').get(getCommodity).post(setCommodity)
@@ -15,7 +16,8 @@ const {
 //router.route('/:id').get(getCommodityByid)
 router.get("/", getUser );
 router.get("/:id", getUserById);
-router.post("/", setUser);
+router.post("/", login);
+router.post("/register", register);
 router.put("/:id", updateUser);
 router.delete("/:id", deleteUser);
 

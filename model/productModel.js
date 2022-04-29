@@ -2,13 +2,13 @@ const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema(
   {
-    commodity: {
-      id: {
+    
+      commodityId: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: "commodities",
       },
-      name: {
+      commodityName: {
         type: String,
         required: true,
       },
@@ -19,7 +19,7 @@ const productSchema = new mongoose.Schema(
       Grade: {
         type: String,
       },
-    },
+    
     producerId: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
@@ -32,7 +32,7 @@ const productSchema = new mongoose.Schema(
     productAvailability: {
       type: [String],
     },
-    warehouse: {
+    
       warehouseId: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
@@ -55,7 +55,7 @@ const productSchema = new mongoose.Schema(
         required: true,
       },
     },
-  },
+  
   {
     timeseries: true,
   }
