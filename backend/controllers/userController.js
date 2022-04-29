@@ -2,10 +2,11 @@ const asyncHAndler = require("express-async-handler");
 const User = require("../model/userModel");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const {protect} =require("../middleware/authMiddleware")
 
 //--------------------------------------------------------------------------------------------------------------------------------------//
 //@desc get commodities
-//@route get/api/commodity
+//@route get/api/user/login
 //@access public
 const getUser = asyncHAndler(async (req, res) => {
   const user = await User.find();
@@ -36,7 +37,7 @@ const login = asyncHAndler(async (req, res) => {
 });
 //--------------------------------------------------------------------------------------------------------------------------------------//
 //@desc get commodities by id
-//@route get/api/commodity
+//@route get/api/user/profile
 //@access private
 const getUserById = asyncHAndler(async (req, res) => {
   try {
@@ -47,10 +48,25 @@ const getUserById = asyncHAndler(async (req, res) => {
   }
 });
 
+const me = asyncHAndler(async (req, res) => {
+   const {_id, firstName,lastName,email,phonenumber,address,username} =await User.findById(req.user.id)
+   {
+    res.status(200).json({  
+      _id,
+      firstName,
+      lastName,
+      email,
+      phonenumber,
+      address,
+      username});
+   }
+    
+   
+});
 //--------------------------------------------------------------------------------------------------------------------------------------//
 
 //@desc register new user
-//@route POST/api/commodity
+//@route POST/api/user/register
 //@access public
 const register = asyncHAndler(async (req, res) => {
   const {
@@ -198,4 +214,5 @@ module.exports = {
   getUserById,
   register,
   login,
+  me
 };
