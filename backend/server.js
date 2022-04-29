@@ -1,5 +1,6 @@
 const express = require('express')
 const colors= require('colors')
+require('dotenv').config()
 const connectDB = require('../config/db')
 const commodityRoutes =  require('../routes/commudityRoutes')
 const warehouseRoutes =  require('../routes/warehouseRoutes')
