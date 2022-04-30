@@ -5,9 +5,9 @@ import React from 'react'
 
 function Header() {
   return (
-    <Header className='header'>
+    <div className='header'>
 <div className="log">
-    <Link to='/'>Home</Link>
+    <Link to='/'>agriculture  Commodity Exchange</Link>
 </div>
 <ul>
     <li>
@@ -16,12 +16,12 @@ function Header() {
            </Link> 
     </li>
     <li>
-       <Link to='/login'>
+       <Link to='/register'>
            <FaSignOutAlt/>Register
            </Link> 
     </li>
 </ul>
-    </Header>
+    </div>
   )
 }
 
