@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Header from './components/Header';
+import Newproduct from './pages/Newproduct';
  
  
  function App() {
@@ -24,6 +25,7 @@ import Header from './components/Header';
     <Route path="/" element={<Dashboard />} />
     <Route path="/login" element={<Login />} />
     <Route path="/register" element={<Register/>} />
+    <Route path="/newproduct" element={<Newproduct/>} />
     
     </Routes>
 

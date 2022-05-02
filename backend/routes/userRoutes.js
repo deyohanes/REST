@@ -18,8 +18,8 @@ const {
 router.get("/", getUser );
 router.get("/:id", getUserById);
 router.post("/login", login);
-router.post("/", protect ,me);
-router.post("/register", register);
+router.post("/dd", protect ,me);
+router.post("/", register);
 router.put("/:id", updateUser);
 router.delete("/:id", deleteUser);
 

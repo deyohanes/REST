@@ -10,7 +10,7 @@ const {protect} =require("../middleware/authMiddleware")
 //@access public
 const getUser = asyncHAndler(async (req, res) => {
   const user = await User.find();
-  res.status(200).json(user);
+  res.status(200).json(req.user);
 });
 
 const login = asyncHAndler(async (req, res) => { 

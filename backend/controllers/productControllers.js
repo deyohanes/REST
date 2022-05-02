@@ -8,6 +8,10 @@ const getProduct = asyncHAndler(async (req, res) => {
   const product = await Products.find({user : req.user.id});
   res.status(200).json(product);
 });
+const getAllProduct = asyncHAndler(async (req, res) => {
+  const product = await Products.find();
+  res.status(200).json(product);
+});
 
 //@desc setproducts
 //@route POST/api/goals
@@ -125,4 +129,5 @@ module.exports = {
   addproduct,
   updateProduct,
   deleteProduct,
+  getAllProduct
 };
